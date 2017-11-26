@@ -1,1 +1,1 @@
-# Show values from virtual GAME dashboard on REAL dashboard from car, using Arduino.
+# Show values from GAME on REAL dashboard from car
