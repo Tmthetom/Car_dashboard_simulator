@@ -8,3 +8,13 @@ C:\Users\morav\Documents\Visual Studio 2017\Projects\Car dashboard simulator\Car
 C:\Users\morav\Documents\Visual Studio 2017\Projects\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car dashboard simulator.exe
 C:\Users\morav\Documents\Visual Studio 2017\Projects\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car dashboard simulator.pdb
 C:\Users\morav\Documents\Visual Studio 2017\Projects\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car_dashboard_simulator.FormMain.resources
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\bin\Debug\Car dashboard simulator.exe.config
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\bin\Debug\Car dashboard simulator.exe
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\bin\Debug\Car dashboard simulator.pdb
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car dashboard simulator.csprojResolveAssemblyReference.cache
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car_dashboard_simulator.FormMain.resources
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car_dashboard_simulator.Properties.Resources.resources
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car dashboard simulator.csproj.GenerateResource.Cache
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car dashboard simulator.csproj.CoreCompileInputs.cache
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car dashboard simulator.exe
+C:\Users\morav\Documents\Github\car_dashboard_simulator\Car dashboard simulator\Car dashboard simulator\obj\Debug\Car dashboard simulator.pdb

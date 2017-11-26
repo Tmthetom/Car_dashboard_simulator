@@ -31,25 +31,25 @@ namespace Car_dashboard_simulator
         /// <param name="e"></param>
         private void TrackBarSpeed_ValueChanged(object sender, EventArgs e)
         {
-            serialPort.WriteLine("S" + trackBarSpeed.Value);
+            mySerial.WriteLine("S" + trackBarSpeed.Value);
         }
 
         // Revolutions changed
         private void TrackBarRevolutions_ValueChanged(object sender, EventArgs e)
         {
-            serialPort.WriteLine("R" + trackBarRevolutions.Value);
+            mySerial.WriteLine("R" + trackBarRevolutions.Value);
         }
 
         // Fuel changed
         private void TrackBarFuel_ValueChanged(object sender, EventArgs e)
         {
-            serialPort.WriteLine("F" + trackBarFuel.Value);
+            mySerial.WriteLine("F" + trackBarFuel.Value);
         }
 
         // Temperature changed
         private void TrackBarTemperature_ValueChanged(object sender, EventArgs e)
         {
-            serialPort.WriteLine("T" + trackBarTemperature.Value);
+            mySerial.WriteLine("T" + trackBarTemperature.Value);
         }
 
         #endregion Control
@@ -113,6 +113,10 @@ namespace Car_dashboard_simulator
 
                 // Set controls
                 groupBoxControl.Enabled = false;
+                trackBarSpeed.Value = 0;
+                trackBarRevolutions.Value = 0;
+                trackBarFuel.Value = 0;
+                trackBarTemperature.Value = 0;
 
                 // Disconnect
                 mySerial.Close();
