@@ -30,13 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.groupBoxControl = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.trackBarTemperature = new System.Windows.Forms.TrackBar();
-            this.trackBarFuel = new System.Windows.Forms.TrackBar();
+            this.groupBoxSpeed = new System.Windows.Forms.GroupBox();
+            this.labelSpeedValue = new System.Windows.Forms.Label();
             this.trackBarRevolutions = new System.Windows.Forms.TrackBar();
             this.trackBarSpeed = new System.Windows.Forms.TrackBar();
             this.groupBoxConnection = new System.Windows.Forms.GroupBox();
@@ -46,108 +41,59 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxDeviceName = new System.Windows.Forms.TextBox();
             this.isConnected = new System.Windows.Forms.Timer(this.components);
-            this.labelSpeedValue = new System.Windows.Forms.Label();
-            this.groupBoxControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarTemperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarFuel)).BeginInit();
+            this.groupBoxRevolutions = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelSpeedConvertedValue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelRevolutionsValue = new System.Windows.Forms.Label();
+            this.labelRevolutionsConvertedValue = new System.Windows.Forms.Label();
+            this.groupBoxSpeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRevolutions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).BeginInit();
             this.groupBoxConnection.SuspendLayout();
+            this.groupBoxRevolutions.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBoxControl
+            // groupBoxSpeed
             // 
-            this.groupBoxControl.Controls.Add(this.labelSpeedValue);
-            this.groupBoxControl.Controls.Add(this.label4);
-            this.groupBoxControl.Controls.Add(this.label3);
-            this.groupBoxControl.Controls.Add(this.label2);
-            this.groupBoxControl.Controls.Add(this.label1);
-            this.groupBoxControl.Controls.Add(this.trackBarTemperature);
-            this.groupBoxControl.Controls.Add(this.trackBarFuel);
-            this.groupBoxControl.Controls.Add(this.trackBarRevolutions);
-            this.groupBoxControl.Controls.Add(this.trackBarSpeed);
-            this.groupBoxControl.Enabled = false;
-            this.groupBoxControl.Location = new System.Drawing.Point(12, 118);
-            this.groupBoxControl.Name = "groupBoxControl";
-            this.groupBoxControl.Size = new System.Drawing.Size(622, 231);
-            this.groupBoxControl.TabIndex = 0;
-            this.groupBoxControl.TabStop = false;
-            this.groupBoxControl.Text = "Ovládání";
+            this.groupBoxSpeed.Controls.Add(this.labelSpeedConvertedValue);
+            this.groupBoxSpeed.Controls.Add(this.label1);
+            this.groupBoxSpeed.Controls.Add(this.labelSpeedValue);
+            this.groupBoxSpeed.Controls.Add(this.trackBarSpeed);
+            this.groupBoxSpeed.Enabled = false;
+            this.groupBoxSpeed.Location = new System.Drawing.Point(12, 118);
+            this.groupBoxSpeed.Name = "groupBoxSpeed";
+            this.groupBoxSpeed.Size = new System.Drawing.Size(301, 231);
+            this.groupBoxSpeed.TabIndex = 0;
+            this.groupBoxSpeed.TabStop = false;
+            this.groupBoxSpeed.Text = "Rychlost";
             // 
-            // label4
+            // labelSpeedValue
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(12, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Teplota:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(12, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Palivo:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(12, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Otáčky:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Rychlost:";
-            // 
-            // trackBarTemperature
-            // 
-            this.trackBarTemperature.Location = new System.Drawing.Point(98, 180);
-            this.trackBarTemperature.Maximum = 100;
-            this.trackBarTemperature.Name = "trackBarTemperature";
-            this.trackBarTemperature.Size = new System.Drawing.Size(461, 45);
-            this.trackBarTemperature.TabIndex = 3;
-            this.trackBarTemperature.ValueChanged += new System.EventHandler(this.TrackBarTemperature_ValueChanged);
-            // 
-            // trackBarFuel
-            // 
-            this.trackBarFuel.Location = new System.Drawing.Point(98, 129);
-            this.trackBarFuel.Maximum = 100;
-            this.trackBarFuel.Name = "trackBarFuel";
-            this.trackBarFuel.Size = new System.Drawing.Size(461, 45);
-            this.trackBarFuel.TabIndex = 2;
-            this.trackBarFuel.ValueChanged += new System.EventHandler(this.TrackBarFuel_ValueChanged);
+            this.labelSpeedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSpeedValue.Location = new System.Drawing.Point(6, 67);
+            this.labelSpeedValue.Name = "labelSpeedValue";
+            this.labelSpeedValue.Size = new System.Drawing.Size(289, 39);
+            this.labelSpeedValue.TabIndex = 8;
+            this.labelSpeedValue.Text = "0";
+            this.labelSpeedValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // trackBarRevolutions
             // 
-            this.trackBarRevolutions.Location = new System.Drawing.Point(98, 78);
+            this.trackBarRevolutions.Location = new System.Drawing.Point(6, 19);
             this.trackBarRevolutions.Maximum = 7000;
             this.trackBarRevolutions.Name = "trackBarRevolutions";
-            this.trackBarRevolutions.Size = new System.Drawing.Size(461, 45);
+            this.trackBarRevolutions.Size = new System.Drawing.Size(303, 45);
             this.trackBarRevolutions.TabIndex = 1;
-            this.trackBarRevolutions.TickFrequency = 100;
+            this.trackBarRevolutions.TickFrequency = 250;
             this.trackBarRevolutions.ValueChanged += new System.EventHandler(this.TrackBarRevolutions_ValueChanged);
             // 
             // trackBarSpeed
             // 
-            this.trackBarSpeed.Location = new System.Drawing.Point(98, 27);
+            this.trackBarSpeed.Location = new System.Drawing.Point(6, 19);
             this.trackBarSpeed.Maximum = 240;
             this.trackBarSpeed.Name = "trackBarSpeed";
-            this.trackBarSpeed.Size = new System.Drawing.Size(461, 45);
+            this.trackBarSpeed.Size = new System.Drawing.Size(289, 45);
             this.trackBarSpeed.TabIndex = 0;
             this.trackBarSpeed.TickFrequency = 10;
             this.trackBarSpeed.ValueChanged += new System.EventHandler(this.TrackBarSpeed_ValueChanged);
@@ -220,49 +166,98 @@
             this.isConnected.Interval = 1000;
             this.isConnected.Tick += new System.EventHandler(this.IsConnected_Tick);
             // 
-            // labelSpeedValue
+            // groupBoxRevolutions
             // 
-            this.labelSpeedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSpeedValue.Location = new System.Drawing.Point(565, 31);
-            this.labelSpeedValue.Name = "labelSpeedValue";
-            this.labelSpeedValue.Size = new System.Drawing.Size(51, 23);
-            this.labelSpeedValue.TabIndex = 8;
-            this.labelSpeedValue.Text = "0";
-            this.labelSpeedValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.groupBoxRevolutions.Controls.Add(this.labelRevolutionsConvertedValue);
+            this.groupBoxRevolutions.Controls.Add(this.labelRevolutionsValue);
+            this.groupBoxRevolutions.Controls.Add(this.label2);
+            this.groupBoxRevolutions.Controls.Add(this.trackBarRevolutions);
+            this.groupBoxRevolutions.Enabled = false;
+            this.groupBoxRevolutions.Location = new System.Drawing.Point(319, 118);
+            this.groupBoxRevolutions.Name = "groupBoxRevolutions";
+            this.groupBoxRevolutions.Size = new System.Drawing.Size(315, 231);
+            this.groupBoxRevolutions.TabIndex = 1;
+            this.groupBoxRevolutions.TabStop = false;
+            this.groupBoxRevolutions.Text = "Otáčky";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(6, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 50);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "↓";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSpeedConvertedValue
+            // 
+            this.labelSpeedConvertedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSpeedConvertedValue.Location = new System.Drawing.Point(6, 165);
+            this.labelSpeedConvertedValue.Name = "labelSpeedConvertedValue";
+            this.labelSpeedConvertedValue.Size = new System.Drawing.Size(289, 39);
+            this.labelSpeedConvertedValue.TabIndex = 10;
+            this.labelSpeedConvertedValue.Text = "0";
+            this.labelSpeedConvertedValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(6, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(303, 50);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "↓";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRevolutionsValue
+            // 
+            this.labelRevolutionsValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRevolutionsValue.Location = new System.Drawing.Point(6, 67);
+            this.labelRevolutionsValue.Name = "labelRevolutionsValue";
+            this.labelRevolutionsValue.Size = new System.Drawing.Size(303, 39);
+            this.labelRevolutionsValue.TabIndex = 11;
+            this.labelRevolutionsValue.Text = "0";
+            this.labelRevolutionsValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRevolutionsConvertedValue
+            // 
+            this.labelRevolutionsConvertedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRevolutionsConvertedValue.Location = new System.Drawing.Point(7, 165);
+            this.labelRevolutionsConvertedValue.Name = "labelRevolutionsConvertedValue";
+            this.labelRevolutionsConvertedValue.Size = new System.Drawing.Size(302, 39);
+            this.labelRevolutionsConvertedValue.TabIndex = 11;
+            this.labelRevolutionsConvertedValue.Text = "0";
+            this.labelRevolutionsConvertedValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 361);
+            this.Controls.Add(this.groupBoxRevolutions);
             this.Controls.Add(this.groupBoxConnection);
-            this.Controls.Add(this.groupBoxControl);
+            this.Controls.Add(this.groupBoxSpeed);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Car dashboard simulator";
-            this.groupBoxControl.ResumeLayout(false);
-            this.groupBoxControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarTemperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarFuel)).EndInit();
+            this.groupBoxSpeed.ResumeLayout(false);
+            this.groupBoxSpeed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRevolutions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).EndInit();
             this.groupBoxConnection.ResumeLayout(false);
             this.groupBoxConnection.PerformLayout();
+            this.groupBoxRevolutions.ResumeLayout(false);
+            this.groupBoxRevolutions.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBoxControl;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TrackBar trackBarTemperature;
-        private System.Windows.Forms.TrackBar trackBarFuel;
+        private System.Windows.Forms.GroupBox groupBoxSpeed;
         private System.Windows.Forms.TrackBar trackBarRevolutions;
         private System.Windows.Forms.TrackBar trackBarSpeed;
         private System.Windows.Forms.GroupBox groupBoxConnection;
@@ -274,6 +269,12 @@
         private System.Windows.Forms.Timer isConnected;
         public System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.Label labelSpeedValue;
+        private System.Windows.Forms.GroupBox groupBoxRevolutions;
+        private System.Windows.Forms.Label labelSpeedConvertedValue;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelRevolutionsConvertedValue;
+        private System.Windows.Forms.Label labelRevolutionsValue;
+        private System.Windows.Forms.Label label2;
     }
 }
 

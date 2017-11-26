@@ -25,6 +25,7 @@ namespace Car_dashboard_simulator
         #region Control
 
         Functions.PolynomialRegression polynomialRegression = new Functions.PolynomialRegression();
+        int polynomialValue = 0;
 
         /// <summary>
         /// Speed changed
@@ -34,25 +35,18 @@ namespace Car_dashboard_simulator
         private void TrackBarSpeed_ValueChanged(object sender, EventArgs e)
         {
             labelSpeedValue.Text = trackBarSpeed.Value.ToString();
-            mySerial.WriteLine("S" + polynomialRegression.Speed(trackBarSpeed.Value));
+            polynomialValue = polynomialRegression.Speed(trackBarSpeed.Value);
+            labelSpeedConvertedValue.Text = polynomialValue.ToString();
+            mySerial.WriteLine("S" + polynomialValue);
         }
 
         // Revolutions changed
         private void TrackBarRevolutions_ValueChanged(object sender, EventArgs e)
         {
-            mySerial.WriteLine("R" + trackBarRevolutions.Value);
-        }
-
-        // Fuel changed
-        private void TrackBarFuel_ValueChanged(object sender, EventArgs e)
-        {
-            mySerial.WriteLine("F" + trackBarFuel.Value);
-        }
-
-        // Temperature changed
-        private void TrackBarTemperature_ValueChanged(object sender, EventArgs e)
-        {
-            mySerial.WriteLine("T" + trackBarTemperature.Value);
+            labelRevolutionsValue.Text = trackBarRevolutions.Value.ToString();
+            polynomialValue = polynomialRegression.Revolutions(trackBarRevolutions.Value);
+            labelRevolutionsConvertedValue.Text = polynomialValue.ToString();
+            mySerial.WriteLine("R" + polynomialValue);
         }
 
         #endregion Control
@@ -95,7 +89,8 @@ namespace Car_dashboard_simulator
                 buttonConnection.BackColor = Color.Crimson;
 
                 // Set controls
-                groupBoxControl.Enabled = true;
+                groupBoxSpeed.Enabled = true;
+                groupBoxRevolutions.Enabled = true;
             }
             catch (Exception exception)
             {
@@ -115,11 +110,10 @@ namespace Car_dashboard_simulator
                 buttonConnection.BackColor = Color.GreenYellow;
 
                 // Set controls
-                groupBoxControl.Enabled = false;
+                groupBoxSpeed.Enabled = false;
+                groupBoxRevolutions.Enabled = false;
                 trackBarSpeed.Value = 0;
                 trackBarRevolutions.Value = 0;
-                trackBarFuel.Value = 0;
-                trackBarTemperature.Value = 0;
 
                 // Disconnect
                 mySerial.Close();
