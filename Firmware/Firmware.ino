@@ -1,44 +1,27 @@
 /* Setting */
 
-// Communicaton
-#define baudRate 9600
-#define inBufferSize 50
-
 // Pins
 #define speedPin 5
 #define revolutionPin 6
-#define fuelPin 10
-#define temperaturePin 11
 
-// Range of values
-#define speedMaxRange 240
-#define revolutionsMaxRange 7000
-#define fuelMaxRange 100
-#define temperatureMaxRange 100
-
-// Range of blink
-#define blinkMaxVal 5
-#define blinkMinVal 500
+// Communicaton
+#define baudRate 9600
+#define inBufferSize 200
 
 /* Strings */
 
 char stringSpeed = 'S';
 char stringRevolutions = 'R';
-char stringFuel = 'F';
-char stringTemperature = 'T';
 String inMessage;
 
-/* Speeds */
+/* Delays */
+
 int speedDelay = 0;
 int revolutionsDelay = 0;
-int fuelDelay = 0;
-int temperatureDelay = 0;
 
 /* Values */
 
-int inValue = 0;
-int pwmValue = 0;
-long blinkDelay = 0;
+long inValue = 0;
 bool inComplete = false;
 
 /* Setup before start */
@@ -47,22 +30,21 @@ void setup() {
 	// Pin mode
 	pinMode(speedPin, OUTPUT);
 	pinMode(revolutionPin, OUTPUT);
-	pinMode(fuelPin, OUTPUT);
-	pinMode(temperaturePin, OUTPUT);
 
 	// Allocation
 	inMessage.reserve(inBufferSize);
 
 	// Start communication
 	Serial.begin(baudRate);
-	Serial.println("Connected!");
+	//Serial.println("Connected!");
 }
 
 /* Main program loop */
 void loop() {
 
 	// Control dashboard
-	blink(speedPin);
+	//setClockValue(speedPin, speedDelay);
+	setClockValue(revolutionPin, revolutionsDelay);
 
 	// When values changed
 	if (inComplete && inMessage.length() != 0) {
@@ -71,12 +53,8 @@ void loop() {
 		inValue = inMessage.substring(1, inMessage.length()).toInt();  // Get value
 
 		// Show data for function
-		if (inMessage.charAt(0) == stringSpeed) setBlinkValue();
-		
-		/*if (inMessage.charAt(0) == stringSpeed) setPinValue(speedPin, speedMaxRange);
-		else if (inMessage.charAt(0) == stringRevolutions) setPinValue(revolutionPin, revolutionsMaxRange);
-		else if (inMessage.charAt(0) == stringFuel) setPinValue(fuelPin, fuelMaxRange);
-		else if (inMessage.charAt(0) == stringTemperature) setPinValue(temperaturePin, temperatureMaxRange);*/
+		if (inMessage.charAt(0) == stringSpeed) speedDelay = inValue;
+		else if (inMessage.charAt(0) == stringRevolutions) revolutionsDelay = inValue;
 
 		// Flag message processed
 		inMessage = "";
@@ -84,40 +62,21 @@ void loop() {
 	}
 }
 
-/* Set speed for selected pin in selected range*/
-void setPinValue(int pin, int maxRange) {
-	pwmValue = map(inValue, 0, maxRange, 0, 255);  // Map value from clock range to PWM range
-	analogWrite(pin, pwmValue);  // Write value
-	Serial.println(pwmValue);
-}
+/* Set value for selected clock */
+void setClockValue(int pin, int delayValue) {
 
-double a;
-double b;
-
-/* TESTING */
-void setBlinkValue() {                     
-	/*
-	if (inValue > 120) blinkDelay = 2;
-	else blinkDelay = 150;
-	*/
-	a = inValue;
-	b = (1 / a) * 1000;
-	blinkDelay = (long)b;
-
-	Serial.println(inValue);
-	Serial.println(blinkDelay);
-	Serial.println();
-}
-
-/* TESTING */
-void blink(int pin) {
+	// Do impuls for one second
 	digitalWrite(pin, HIGH);
 	delay(1);
 	digitalWrite(pin, LOW);
-	delay(blinkDelay);
+
+	// Wait selected interval (to show selected value)
+	// If is here because limitations of delayMicroseconds()
+	if (delayValue < 16300) delayMicroseconds(delayValue);  // Microseconds
+	else delay(delayValue / 1000);  // Miliseconds
 }
 
-/* Serial interrput */
+/* Read from serial (serial interrput) */
 void serialEvent() {
 	while (Serial.available()) {
 		char inChar = (char)Serial.read();
