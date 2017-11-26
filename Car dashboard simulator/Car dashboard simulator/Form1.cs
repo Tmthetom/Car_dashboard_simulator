@@ -24,6 +24,8 @@ namespace Car_dashboard_simulator
 
         #region Control
 
+        Functions.PolynomialRegression polynomialRegression = new Functions.PolynomialRegression();
+
         /// <summary>
         /// Speed changed
         /// </summary>
@@ -31,7 +33,8 @@ namespace Car_dashboard_simulator
         /// <param name="e"></param>
         private void TrackBarSpeed_ValueChanged(object sender, EventArgs e)
         {
-            mySerial.WriteLine("S" + trackBarSpeed.Value);
+            labelSpeedValue.Text = trackBarSpeed.Value.ToString();
+            mySerial.WriteLine("S" + polynomialRegression.Speed(trackBarSpeed.Value));
         }
 
         // Revolutions changed

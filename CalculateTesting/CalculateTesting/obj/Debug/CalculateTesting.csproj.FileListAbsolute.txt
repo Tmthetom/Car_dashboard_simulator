@@ -1,0 +1,10 @@
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\bin\Debug\CalculateTesting.exe.config
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\bin\Debug\CalculateTesting.exe
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\bin\Debug\CalculateTesting.pdb
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\obj\Debug\CalculateTesting.csprojResolveAssemblyReference.cache
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\obj\Debug\CalculateTesting.Form1.resources
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\obj\Debug\CalculateTesting.Properties.Resources.resources
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\obj\Debug\CalculateTesting.csproj.GenerateResource.Cache
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\obj\Debug\CalculateTesting.csproj.CoreCompileInputs.cache
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\obj\Debug\CalculateTesting.exe
+c:\users\morav\source\repos\CalculateTesting\CalculateTesting\obj\Debug\CalculateTesting.pdb

@@ -46,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxDeviceName = new System.Windows.Forms.TextBox();
             this.isConnected = new System.Windows.Forms.Timer(this.components);
+            this.labelSpeedValue = new System.Windows.Forms.Label();
             this.groupBoxControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarTemperature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFuel)).BeginInit();
@@ -56,6 +57,7 @@
             // 
             // groupBoxControl
             // 
+            this.groupBoxControl.Controls.Add(this.labelSpeedValue);
             this.groupBoxControl.Controls.Add(this.label4);
             this.groupBoxControl.Controls.Add(this.label3);
             this.groupBoxControl.Controls.Add(this.label2);
@@ -67,7 +69,7 @@
             this.groupBoxControl.Enabled = false;
             this.groupBoxControl.Location = new System.Drawing.Point(12, 118);
             this.groupBoxControl.Name = "groupBoxControl";
-            this.groupBoxControl.Size = new System.Drawing.Size(565, 231);
+            this.groupBoxControl.Size = new System.Drawing.Size(622, 231);
             this.groupBoxControl.TabIndex = 0;
             this.groupBoxControl.TabStop = false;
             this.groupBoxControl.Text = "Ovládání";
@@ -159,7 +161,7 @@
             this.groupBoxConnection.Controls.Add(this.textBoxDeviceName);
             this.groupBoxConnection.Location = new System.Drawing.Point(12, 12);
             this.groupBoxConnection.Name = "groupBoxConnection";
-            this.groupBoxConnection.Size = new System.Drawing.Size(565, 100);
+            this.groupBoxConnection.Size = new System.Drawing.Size(622, 100);
             this.groupBoxConnection.TabIndex = 1;
             this.groupBoxConnection.TabStop = false;
             this.groupBoxConnection.Text = "Připojení k Arduinu";
@@ -169,9 +171,9 @@
             this.buttonConnection.BackColor = System.Drawing.Color.GreenYellow;
             this.buttonConnection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonConnection.Location = new System.Drawing.Point(349, 32);
+            this.buttonConnection.Location = new System.Drawing.Point(334, 32);
             this.buttonConnection.Name = "buttonConnection";
-            this.buttonConnection.Size = new System.Drawing.Size(193, 52);
+            this.buttonConnection.Size = new System.Drawing.Size(269, 52);
             this.buttonConnection.TabIndex = 4;
             this.buttonConnection.Text = "PŘIPOJIT";
             this.buttonConnection.UseVisualStyleBackColor = false;
@@ -218,11 +220,21 @@
             this.isConnected.Interval = 1000;
             this.isConnected.Tick += new System.EventHandler(this.IsConnected_Tick);
             // 
+            // labelSpeedValue
+            // 
+            this.labelSpeedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSpeedValue.Location = new System.Drawing.Point(565, 31);
+            this.labelSpeedValue.Name = "labelSpeedValue";
+            this.labelSpeedValue.Size = new System.Drawing.Size(51, 23);
+            this.labelSpeedValue.TabIndex = 8;
+            this.labelSpeedValue.Text = "0";
+            this.labelSpeedValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 361);
+            this.ClientSize = new System.Drawing.Size(646, 361);
             this.Controls.Add(this.groupBoxConnection);
             this.Controls.Add(this.groupBoxControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -261,6 +273,7 @@
         private System.Windows.Forms.TextBox textBoxDeviceName;
         private System.Windows.Forms.Timer isConnected;
         public System.IO.Ports.SerialPort serialPort;
+        private System.Windows.Forms.Label labelSpeedValue;
     }
 }
 
