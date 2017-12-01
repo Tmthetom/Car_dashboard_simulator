@@ -16,8 +16,8 @@ String inMessage;
 
 /* Delays */
 
-int speedDelay = 0;
-int revolutionsDelay = 0;
+long speedDelay = 0;
+long revolutionsDelay = 0;
 
 /* Values */
 
@@ -63,7 +63,7 @@ void loop() {
 }
 
 /* Set value for selected clock */
-void setClockValue(int pin, int delayValue) {
+void setClockValue(int pin, long delayValue) {
 
 	// Do impuls for one second
 	digitalWrite(pin, HIGH);
