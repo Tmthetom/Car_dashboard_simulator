@@ -26,6 +26,7 @@ namespace Car_dashboard_simulator
 
         Functions.PolynomialRegression polynomialRegression = new Functions.PolynomialRegression();
         int polynomialValue = 0;
+        int realEngineRotation = 0;
 
         /// <summary>
         /// Speed changed
@@ -43,8 +44,14 @@ namespace Car_dashboard_simulator
         // Revolutions changed
         private void TrackBarRevolutions_ValueChanged(object sender, EventArgs e)
         {
-            labelRevolutionsValue.Text = trackBarRevolutions.Value.ToString();
-            polynomialValue = polynomialRegression.Revolutions(trackBarRevolutions.Value);
+            // Engine rotation cant be under approximately 1000 rotation per minute.
+            // When OFF, there is 0 value (like not rotation). When ON, there can be 
+            // only around 1000 rotations per minute and higher. So dashboard cant 
+            // even show values lower then 1000 (depends on engine type).
+            realEngineRotation = trackBarRevolutions.Value < 1000 && trackBarRevolutions.Value > 0 ? 1000 : trackBarRevolutions.Value;
+
+            labelRevolutionsValue.Text = realEngineRotation.ToString();
+            polynomialValue = polynomialRegression.Revolutions(realEngineRotation);
             labelRevolutionsConvertedValue.Text = polynomialValue.ToString();
             mySerial.WriteLine("R" + polynomialValue);
         }
